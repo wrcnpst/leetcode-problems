@@ -35,5 +35,18 @@ class Solution:
 
         return True
 
+    def isPalindromeBetter(self, x: int) -> bool:
+        if x < 0:
+            return False
 
-print(Solution().isPalindrome(101))
+        temp = x
+        reverse = 0
+
+        while temp > 0:
+            reverse = reverse * 10 + temp % 10
+            temp //= 10
+
+        return x == reverse
+
+
+print(Solution().isPalindromeBetter(101))
